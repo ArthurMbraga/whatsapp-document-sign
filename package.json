@@ -1,0 +1,25 @@
+{
+  "name": "whatsapp-document-sign",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node build/index.js",
+    "build": "rimraf ./build && tsc"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.3.0",
+    "@types/pdfkit": "^0.12.9",
+    "rimraf": "^5.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "@open-wa/wa-automate": "^4.64.5",
+    "dotenv": "^16.0.3",
+    "luxon": "^3.3.0",
+    "pdf-signer-brazil": "^3.0.2",
+    "pdfkit": "^0.13.0"
+  }
+}
