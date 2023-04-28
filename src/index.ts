@@ -15,8 +15,11 @@ function start(client: Client) {
     if (message.isGroupMsg && message.chatId.toString() === GROUP_ID) {
       try {
         const messageText = message.body;
-        if (messageText.includes("Nome:")) {
-          const name = messageText.split("\n")[0].split("Nome:")[1].trim();
+
+        const firstLine = messageText.split("\n")?.[0];
+        const name = firstLine.split("Nome:")?.[1]?.trim();
+
+        if (name) {
           await client.sendText(
             message.from,
             `✅ Gerando documento para: ${name}...`
