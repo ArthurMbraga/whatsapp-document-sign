@@ -20,7 +20,10 @@ COPY . .
 RUN ls -R ./src
 
 # Build the application
-# RUN yarn build
+RUN yarn build
 
 # Start the application
-# CMD ["yarn", "start"]
+
+RUN ls -R ./build/src
+
+CMD ["yarn", "start"]
