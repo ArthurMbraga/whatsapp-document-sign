@@ -22,8 +22,8 @@ RUN ls -R ./src
 # Build the application
 RUN yarn build
 
+
+RUN ls -R .
+
 # Start the application
-
-RUN ls -R ./build/src
-
 CMD ["yarn", "start"]
