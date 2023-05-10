@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon",
     "start": "ts-node build/index.js",
-    "build": "rimraf ./build && tsc --noEmitOnError --noEmit false --skipLibCheck"
+    "build": "rimraf ./build && tsc --noEmit false --noImplicitAny false"
   },
   "devDependencies": {
     "@types/luxon": "^3.3.0",
