@@ -17,4 +17,4 @@ COPY . .
 RUN yarn build
 
 # Start the application
-CMD ["node", "build/index.js"]
+CMD ["yarn", "run"]
