@@ -16,8 +16,11 @@ RUN yarn install --production=true --frozen-lockfile
 # Copy the rest of the application code
 COPY . .
 
+# Print the contents of the directory
+RUN ls -la
+
 # Build the application
-RUN yarn build
+# RUN yarn build
 
 # Start the application
-CMD ["yarn", "start"]
+# CMD ["yarn", "start"]
