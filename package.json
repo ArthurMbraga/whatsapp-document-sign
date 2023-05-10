@@ -13,10 +13,10 @@
     "@types/pdfkit": "^0.12.9",
     "nodemon": "^2.0.22",
     "rimraf": "^5.0.0",
-    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.0.2"
   },
   "dependencies": {
+    "tsconfig-paths": "^4.2.0",
     "@open-wa/wa-automate": "^4.65.1",
     "dotenv": "^16.0.3",
     "luxon": "^3.3.0",
