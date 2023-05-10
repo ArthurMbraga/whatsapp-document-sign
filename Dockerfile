@@ -23,4 +23,4 @@ COPY . .
 RUN yarn build
 
 # Start the application
-CMD ["yarn", "start"]
+CMD ["yarn", "run-build"]
