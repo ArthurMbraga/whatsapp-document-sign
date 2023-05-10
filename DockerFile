@@ -8,6 +8,8 @@ WORKDIR /app
 # Copy package.json and yarn.lock
 COPY package.json yarn.lock ./
 
+RUN chown -R node:node /app/node_modules
+
 # Install dependencies
 RUN yarn install --frozen-lockfile
 
