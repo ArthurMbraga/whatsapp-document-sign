@@ -17,7 +17,7 @@ RUN yarn install --production=true --frozen-lockfile
 COPY . .
 
 # Print the contents of the directory
-RUN ls -la
+RUN ls -R ./src
 
 # Build the application
 # RUN yarn build
