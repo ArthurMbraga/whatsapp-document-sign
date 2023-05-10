@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
+    "target": "ES2016",
     "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2020", "DOM"],
+    "useDefineForClassFields": true,
     "skipLibCheck": true,
+    "sourceMap": true,
+
     "outDir": "./build" /* Specify an output folder for all emitted files. */,
 
     /* Bundler mode */
@@ -18,9 +20,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
     "typeRoots": ["./node_modules/@types", "./src/@types"]
   },
-  "include": ["src"],
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
   "ts-node": {
     "esm": true,
     "experimentalSpecifierResolution": "node"
