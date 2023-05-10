@@ -17,7 +17,7 @@
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "@open-wa/wa-automate": "^4.64.5",
+    "@open-wa/wa-automate": "^4.65.1",
     "dotenv": "^16.0.3",
     "luxon": "^3.3.0",
     "pdf-signer-brazil": "^3.0.2",
