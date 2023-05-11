@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "start": "ts-node build/index.js",
-    "build": "rimraf ./build && tsc --noEmit false --noImplicitAny false"
+    "build": "rimraf ./build && tsc --noEmit false --noImplicitAny false --skipLibCheck true"
   },
   "devDependencies": {
     "@open-wa/wa-automate": "^4.65.1",
