@@ -2,21 +2,20 @@
   "name": "whatsapp-document-sign",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "run-build": "ts-node build/index.js",
     "build": "rimraf ./build && tsc --noEmit false --noImplicitAny false"
   },
   "devDependencies": {
     "@types/luxon": "^3.3.0",
     "@types/pdfkit": "^0.12.9",
-    "nodemon": "^2.0.22",
     "rimraf": "^5.0.0",
+    "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.2"
   },
   "dependencies": {
-    "tsconfig-paths": "^4.2.0",
     "@open-wa/wa-automate": "^4.65.1",
     "dotenv": "^16.0.3",
     "luxon": "^3.3.0",

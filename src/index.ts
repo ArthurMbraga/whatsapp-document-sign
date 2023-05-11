@@ -6,11 +6,9 @@ import { writeDocument } from "./writeDocument";
 
 const { PATH_TO_SIGNED_PDF_FILE, GROUP_ID } = process.env;
 
-create(openWaConfig).then((client) => start(client));
-
 function start(client: Client) {
   client.sendText(GROUP_ID as any, "✅ Operacional");
- 
+
   client.onMessage(async (message) => {
     if (message.isGroupMsg && message.chatId.toString() === GROUP_ID) {
       try {
@@ -47,3 +45,5 @@ function start(client: Client) {
     }
   });
 }
+
+create(openWaConfig).then((client) => start(client));
