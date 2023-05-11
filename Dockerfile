@@ -1,18 +1,20 @@
 # Define the base image
-FROM openwa/wa-automate
-ENTRYPOINT []
+FROM node:16-alpine
+
+# Set working directory
+WORKDIR /app
 
 # Copy dependencies file
-COPY package.json package-lock.json ./
+COPY package.json yarn.lock ./
 
 # Install dependencies
-RUN npm install --production=true
+RUN yarn install --production=true --frozen-lockfile
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the application
-RUN npm run build
+RUN yarn build
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
