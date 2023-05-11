@@ -2,8 +2,6 @@
 FROM openwa/wa-automate
 ENTRYPOINT []
 
-ENV PUPPETEER_CACHE_DIR=/app/.cache/puppeteer
-
 # Copy package.json and yarn.lock
 COPY package.json yarn.lock ./
 
