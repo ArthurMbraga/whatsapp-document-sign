@@ -22,5 +22,7 @@ COPY . .
 # Build the application
 RUN yarn build
 
+USER owauser
+
 # Start the application
-CMD ["yarn", "run-build"]
+CMD ["yarn", "start"]
