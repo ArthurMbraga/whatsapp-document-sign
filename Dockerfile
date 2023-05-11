@@ -2,17 +2,17 @@
 FROM openwa/wa-automate
 ENTRYPOINT []
 
-# Copy package.json and yarn.lock
-COPY package.json yarn.lock ./
+# Copy dependencies file
+COPY package.json package-lock.json ./
 
 # Install dependencies
-RUN yarn install --production=true --frozen-lockfile
+RUN npm install --production=true
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the application
-RUN yarn build
+RUN npm run build
 
 # Start the application
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
