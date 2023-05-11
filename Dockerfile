@@ -2,14 +2,6 @@
 FROM openwa/wa-automate
 ENTRYPOINT []
 
-USER root
-
-# Set the working directory
-WORKDIR /app
-
-RUN apt-get update && \
-    apt-get install -y chromium-browser
-
 ENV PUPPETEER_CACHE_DIR=/app/.cache/puppeteer
 
 # Copy package.json and yarn.lock
@@ -23,8 +15,6 @@ COPY . .
 
 # Build the application
 RUN yarn build
-
-USER owauser
 
 # Start the application
 CMD ["yarn", "start"]
