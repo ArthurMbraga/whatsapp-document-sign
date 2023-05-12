@@ -7,6 +7,8 @@ services:
     volumes:
       - .env:/app/.env
       - session:/app/_IGNORE_session
+      - session-json:/app/session.data
       - signature.pfx:/app/signature.pfx
 volumes:
   session:
+  session-json:
