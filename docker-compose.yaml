@@ -5,10 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - ./.env:/app/.env
       - session:/app/_IGNORE_session
-      - session-json:/app/session.data
+      - session-json:/app/session.data.json
       - ./signature.pfx:/app/signature.pfx
+    env_file:
+      - .env
 volumes:
   session:
   session-json:

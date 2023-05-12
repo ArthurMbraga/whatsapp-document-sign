@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install gnupg wget -y && \
     apt-get update && \
     apt-get install google-chrome-stable -y --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
-    
+
 # Set working directory
 WORKDIR /app
 
@@ -23,6 +23,9 @@ RUN yarn install --production=true --frozen-lockfile
 
 # Copy the rest of the application code
 COPY . .
+
+COPY .env .
+
 
 # Build the application
 RUN yarn build
