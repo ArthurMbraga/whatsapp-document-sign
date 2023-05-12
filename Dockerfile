@@ -1,6 +1,14 @@
 # Define the base image
 FROM node:16-alpine
 
+RUN apk add --update-cache \
+    curl \
+    && curl -sSL https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o chrome.deb \
+    && apk add --no-cache ./chrome.deb \
+    && rm ./chrome.deb \
+    && apk del curl \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set working directory
 WORKDIR /app
 
