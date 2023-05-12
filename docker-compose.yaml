@@ -4,3 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .env:/app/.env
+      - session:/app/_IGNORE_session
+      - signature.pfx:/app/signature.pfx
+volumes:
+  session:
