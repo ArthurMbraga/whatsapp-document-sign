@@ -22,12 +22,12 @@ COPY package.json yarn.lock ./
 # Install dependencies
 RUN yarn install --production=true --frozen-lockfile
 
-# Create empty volumes
-RUN touch session.data.json
-RUN mkdir _IGNORE_session
-
 # Copy the rest of the application code
 COPY . .
+
+# Create empty volumes if they don't exist
+VOLUME /app/session.data.json
+VOLUME /app/_IGNORE_session
 
 COPY .env .
 
