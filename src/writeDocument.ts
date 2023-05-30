@@ -10,6 +10,8 @@ export function writeDocument(content: string) {
       layout: "portrait",
     });
 
+    fs.mkdirSync("./out", { recursive: true }); // Create the directory if it doesn't exist
+
     const writeStream = fs.createWriteStream(PATH_TO_PDF_FILE);
 
     doc.pipe(writeStream);
