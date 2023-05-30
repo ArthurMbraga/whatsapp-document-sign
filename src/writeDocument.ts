@@ -14,7 +14,7 @@ export function writeDocument(content: string) {
 
     doc.pipe(writeStream);
 
-    doc.image("./src/images/bg.jpg", 0, 0, {
+    doc.image("./images/bg.jpg", 0, 0, {
       width: doc.page.width,
       height: doc.page.height,
     });

@@ -2,6 +2,7 @@ FROM node:slim
 
 # We don't need the standalone Chromium
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD true
+ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/google-chrome
 
 # Install Google Chrome Stable and fonts
 # Note: this installs the necessary libs to make the browser work with Puppeteer.
@@ -20,6 +21,10 @@ COPY package.json yarn.lock ./
 
 # Install dependencies
 RUN yarn install --production=true --frozen-lockfile
+
+# Create empty volumes
+RUN touch session.data.json
+RUN mkdir _IGNORE_session
 
 # Copy the rest of the application code
 COPY . .

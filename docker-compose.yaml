@@ -6,8 +6,8 @@ services:
       dockerfile: Dockerfile
     volumes:
       - session:/app/_IGNORE_session
-      - session-json:/app/session.data.json
-      - ./signature.pfx:/app/signature.pfx
+      - ./session.data.json:/app/session.data.json:rw
+      - ./signature.pfx:/app/signature.pfx:r
     env_file:
       - .env
 volumes:

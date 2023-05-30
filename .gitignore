@@ -24,10 +24,11 @@ dist-ssr
 *.sln
 *.sw?
 
-*.pfx
-
 # managed
 **.data.json
 **.node-persist**
 **_IGNORE_**
 # end managed
+
+*.pfx
+images
