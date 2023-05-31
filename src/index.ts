@@ -10,11 +10,13 @@ function start(client: Client) {
   client.sendText(GROUP_ID as ChatId, "✅ Operacional");
 
   client.onMessage(async (message) => {
+    console.log(message)
     if (message.isGroupMsg && message.chatId.toString() === GROUP_ID) {
       try {
         const messageText = message.body;
-
+        console.log("mt", messageText)
         const firstLine = messageText.split("\n")?.[0];
+        console.log("fl", firstLine)
         const name = firstLine.split("Nome:")?.[1]?.trim();
 
         if (name) {

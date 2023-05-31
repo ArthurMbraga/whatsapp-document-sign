@@ -1,13 +1,23 @@
 import fs from "fs";
 import PDFDocument from "pdfkit";
 
-const { PATH_TO_PDF_FILE } = process.env;
+const { PATH_TO_PDF_FILE,SIGNATURE_NAME } = process.env;
 
 export function writeDocument(content: string) {
   return new Promise<void>((resolve) => {
     const doc = new PDFDocument({
       size: "A4",
       layout: "portrait",
+      pdfVersion: "1.4",
+      info: {
+        Title: "pdf file",
+        Author: SIGNATURE_NAME,
+        Producer: SIGNATURE_NAME,
+        Creator: SIGNATURE_NAME,
+        CreationDate: new Date(),
+      },
+      compress: true,
+      pdfA: true,
     });
 
     fs.mkdirSync("./out", { recursive: true }); // Create the directory if it doesn't exist
