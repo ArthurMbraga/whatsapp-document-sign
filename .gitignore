@@ -32,3 +32,4 @@ dist-ssr
 
 *.pfx
 images
+out

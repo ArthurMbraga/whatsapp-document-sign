@@ -12,7 +12,7 @@ const {
   SIGNATURE_EMAIL,
 } = process.env;
 
-export async function signAndWriteDocument() {
+export async function signDocument() {
   const signedPdf = await sign(
     fs.readFileSync(PATH_TO_PDF_FILE),
     fs.readFileSync(PATH_TO_P12_CERTIFICATE),

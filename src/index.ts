@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { ChatId, Client, create } from "@open-wa/wa-automate";
 import { openWaConfig } from "./config/openWaConfig";
-import { signAndWriteDocument } from "./signAndWriteDocument";
+import { signDocument } from "./signDocument";
 import { writeDocument } from "./writeDocument";
 
 const { PATH_TO_SIGNED_PDF_FILE, GROUP_ID } = process.env;
@@ -10,13 +10,10 @@ function start(client: Client) {
   client.sendText(GROUP_ID as ChatId, "✅ Operacional");
 
   client.onMessage(async (message) => {
-    console.log(message)
     if (message.isGroupMsg && message.chatId.toString() === GROUP_ID) {
       try {
         const messageText = message.body;
-        console.log("mt", messageText)
         const firstLine = messageText.split("\n")?.[0];
-        console.log("fl", firstLine)
         const name = firstLine.split("Nome:")?.[1]?.trim();
 
         if (name) {
@@ -25,7 +22,7 @@ function start(client: Client) {
             `✅ Gerando documento para: ${name}...`
           );
           await writeDocument(message.body);
-          await signAndWriteDocument();
+          await signDocument();
 
           client.sendFile(
             message.chatId,
